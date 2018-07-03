@@ -1,12 +1,19 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Vue and Express App ",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Ivan Jaramillo",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
+  }
 }
