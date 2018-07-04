@@ -19,7 +19,7 @@
           v-model="password"></v-text-field>
 
         <div class="error" v-html="error"></div><br>
-        <v-btn class="red darken-2" dark @click="login">Register</v-btn>
+        <v-btn class="red darken-2" dark @click="login">Login</v-btn>
       </div>
     </div>
   </v-flex>
@@ -39,10 +39,12 @@ export default {
   methods:{
     async login () {
       try {
-       await AuthenticationService.login({
+      const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
        })
+       this.$store.dispatch('setToken',response.data.token)
+       this.$store.dispatch('setUser', response.data.user)
       } catch (error) {
         this.error = error.response.data.error
       }
