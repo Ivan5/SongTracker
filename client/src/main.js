@@ -7,8 +7,12 @@ import { sync } from 'vuex-router-sync'
 import App from './App'
 import router from './router'
 import store from '@/store/store'
+import VueYouTubeEmbed from 'vue-youtube-embed'
+
+
 Vue.config.productionTip = false
 Vue.use(Vuetify)
+Vue.use(VueYouTubeEmbed)
 
 sync(store,router)
 /* eslint-disable no-new */
